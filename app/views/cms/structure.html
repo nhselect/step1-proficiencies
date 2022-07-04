@@ -1,0 +1,159 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/">Step 1 Proficiencies
+      </a></li>
+    </ol>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="/">Back to Step 1 Proficiencies
+    </a></p>
+  </div>
+</nav>
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-one-third">
+
+      {{ backLink({
+        "href": "/",
+        "text": "Proficiency framework"
+      }) }}
+      <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+      {{ contentsList({
+        items: [
+          {
+            href: "/cms",
+            text: "Introduction to Step 1"
+          },
+          {
+            href: "/cms/introduction",
+            text: "Overview of the proficiency framework"
+          },
+          {
+            href: "/cms/structure",
+            text: "How the proficiency framework fits together",
+            current: "true"
+          },
+          {
+            href: "/cms/assessment",
+            text: "How you'll be assessed"
+          }
+          ,
+          {
+            href: "/cms/resources",
+            text: "Learning resources"
+          }
+          ,
+          {
+            href: "/cms/acknowledgements",
+            text: "Acknowledgements"
+          }
+        ]
+      }) }}
+    </div>
+    <div class="nhsuk-grid-column-two-thirds nhsuk-u-reading-width">
+
+      <!-- Change the page title here -->
+      <h1>
+        <span class="nhsuk-caption-l nhsuk-caption--bottom">
+          Step 1 Proficiencies
+        </span>
+        How the proficiency framework fits together
+      </h1>
+
+      <!-- Add your content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+      
+      <p class="nhsuk-body-l">
+        The proficiency framework is divided into 3 sections titled Step 1, Step 2 and Step 3.
+      </p>
+
+      <h2>
+        Step 1
+      </h2>
+        
+      <p>
+        Step 1 has been designed to support the new starter and provides the foundation to critical care nurse proficiency development in practice. It is delivered locally before accessing higher education. Proficiency development starts immediately when the nurse is exposed to the unique environment of critical care, a setting that cares for the most vulnerable of critically ill patients.
+      </p>
+
+      <p>
+        The illustration demonstrates the synergy of clinical practice and theoretical knowledge in moving along the steps of proficiency to develop the critical care nurse.
+      </p>
+
+      <figure class="nhsuk-image">
+        <img class="nhsuk-image__img" src="/images/stepsdiag1.jpg" alt="A diagram showing the 3 steps of the profiency framework. Each step is higher than the previous one demonstrating the increase in proficiency as the steps progress.">
+        <figcaption class="nhsuk-image__caption">
+          This illustration demonstrates the synergy of clinical practice and theoretical knowledge in moving along the steps of proficiency to develop the critical care nurse.
+        </figcaption>
+      </figure>
+
+      <h2>
+        Steps 2 and 3
+      </h2>
+
+      <p>
+        Step 2 and Step 3 have been designed to accompany post registration academic programmes where the learner will gain the necessary depth of related theory and knowledge.
+      </p>
+
+      <figure class="nhsuk-image">
+        <img class="nhsuk-image__img" src="/images/steps2and3.jpg" alt="A diagram showing the structure of steps 2 and 3 of the proficiency framework">
+      </figure>
+
+      <p>Step 2 proficiencies will allow the nurse to:</p>
+
+      <ul>
+        <li>Demonstrate skilled performance in the activity with enhanced theoretical knowledge and understanding giving rationale for practice</li>
+        <li>Demonstrate application of knowledge and understanding in relation to relevant policies, procedures and guidelines</li>
+        <li>Participate in problem solving through critical analysis and evaluation of more complex situations</li>
+        <li>Develop more varied critical care experience with minimum supervision and guidance, attaining proficiency in related knowledge and skills</li>
+      </ul>
+
+      <p>Step 3 proficiencies will allow the nurse to:</p>
+
+      <ul>
+        <li>Demonstrate competent performance in all the activities specified without direct supervision based upon relevant evidence based knowledge, intuition and established practice</li>
+        <li>Independently problem solve complex situations and offer solutions through critical analysis and evaluation</li>
+        <li>Supervise and instruct others in a range of activities related to their role and responsibilities</li>
+        <li>Apply knowledge, understanding and research to relevant policies, procedures and guidelines to critically analyse and improve practice</li>
+      </ul>
+      
+      <!-- End of content -->
+
+      {{ pagination({
+        "previousUrl": "/cms/introduction",
+        "previousPage": "Overview of the proficiency framework",
+        "nextUrl": "/cms/assessment",
+        "nextPage": "How you'll be assessed"
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}

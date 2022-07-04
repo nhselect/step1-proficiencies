@@ -1,0 +1,141 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/">Step 1 Proficiencies
+      </a></li>
+    </ol>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="/">Back to Step 1 Proficiencies
+    </a></p>
+  </div>
+</nav>
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-one-third">
+
+      {{ backLink({
+        "href": "/",
+        "text": "Proficiency framework"
+      }) }}
+      <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+      {{ contentsList({
+        items: [
+          {
+            href: "/cms",
+            text: "Introduction to Step 1"
+          },
+          {
+            href: "/cms/introduction",
+            text: "Overview of the proficiency framework"
+          },
+          {
+            href: "/cms/structure",
+            text: "How the proficiency framework fits together"
+          },
+          {
+            href: "/cms/assessment",
+            text: "How you'll be assessed",
+            current: "true"
+          },
+          {
+            href: "/cms/resources",
+            text: "Learning resources"
+          },
+          {
+            href: "/cms/acknowledgements",
+            text: "Acknowledgements"
+          }
+        ]
+      }) }}
+    </div>
+    <div class="nhsuk-grid-column-two-thirds nhsuk-u-reading-width">
+
+      <!-- Change the page title here -->
+      <h1>
+        <span class="nhsuk-caption-l nhsuk-caption--bottom">
+          Step 1 Proficiencies
+        </span>
+        How you'll be assessed
+      </h1>
+
+      <!-- Add your content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+      
+      <p class="nhsuk-body-l">
+        Registered nurses aiming to achieve proficiency through all the 'Steps' will be supported in the clinical area by the local Practice Educator/Lead Assessor/Manager or equivalent and suitably experienced competent colleagues and mentors.
+      </p>
+        
+      <p>
+        You will be allocated a Lead Assessor who will oversee your ongoing development, colleagues and mentors will assist you in achieving proficiency in practice. The use of Assessment and Development Plans will enable you, mentors, Lead Assessors and Practice Educators (or equivalent) to monitor your development needs and overall proficiency progression. Adequate time and supervision will be given to you as you progress through the steps and local areas may need to facilitate placements outside of the normal working environment if exposure to certain subject areas or treatments are limited. When assessing a critical care nurse against the clinical standard required, the sign off mentor or assessor is asked to specify if the individual nurse can demonstrate proficiency in relation to each statement outlined within the document.
+      </p>
+
+      <p>
+        Proficiency must be demonstrated through observation of your practice against the proficiency statements outlined. Your mentor or Lead assessor may however use a combination of the following techniques to support their decision:
+      </p>
+
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li>Discussion &amp; probing questions</li>
+        <li>Simulation</li>
+        <li>Completion of associated workbooks</li>
+        <li>Reflective practice</li>
+        <li>Portfolio</li>
+        <li>Record of achievements</li>
+      </ul>
+
+      <h2>
+        Resolving proficiency issues
+      </h2>
+
+      <p>
+        It is your responsibility to work in collaboration with your Lead Assessor and/or Practice Educator to discuss and agree your developmental needs in order to achieve proficiency in critical care practice. By following these simple rules it is hoped you will have a positive experience whilst developing yourself through the 'Steps of Proficiency':
+      </p>
+
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li>Have regular meetings with your Lead Assessor (at least 3 monthly) to assess your current level of proficiency and set a development plan for your progression</li>
+        <li>Be realistic and not over ambitious</li>
+        <li>Do not sign the Assessment and Development Plan if you are not happy with its contents</li>
+        <li>Bring failure of mentorship in practice and/or ineffective assessor reviews to the attention of the Unit Manager at the earliest opportunity</li>
+      </ul>
+
+      <!-- End of content -->
+
+      {{ pagination({
+        "previousUrl": "/cms/structure",
+        "previousPage": "How the proficiency framework fits together",
+        "nextUrl": "/cms/resources",
+        "nextPage": "Learning resources"
+      }) }}
+
+
+    </div>
+  </div>
+{% endblock %}

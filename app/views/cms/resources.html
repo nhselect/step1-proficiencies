@@ -1,0 +1,134 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/">Step 1 Proficiencies
+      </a></li>
+    </ol>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="/">Back to Step 1 Proficiencies
+    </a></p>
+  </div>
+</nav>
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-one-third">
+
+      {{ backLink({
+        "href": "/",
+        "text": "Proficiency framework"
+      }) }}
+      <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+      {{ contentsList({
+        items: [
+          {
+            href: "/cms",
+            text: "Introduction to Step 1"
+          },
+          {
+            href: "/cms/introduction",
+            text: "Overview of the proficiency framework"
+          },
+          {
+            href: "/cms/structure",
+            text: "How the proficiency framework fits together"
+          },
+          {
+            href: "/cms/assessment",
+            text: "How you'll be assessed"
+          }
+          ,
+          {
+            href: "/cms/resources",
+            text: "Learning resources",
+            current: "true"
+          }
+          ,
+          {
+            href: "/cms/acknowledgements",
+            text: "Acknowledgements"
+          }
+        ]
+      }) }}
+    </div>
+    <div class="nhsuk-grid-column-two-thirds nhsuk-u-reading-width">
+
+      <!-- Change the page title here -->
+      <h1>
+        <span class="nhsuk-caption-l nhsuk-caption--bottom">
+          Step 1 Proficiencies
+        </span>
+        Learning resources
+      </h1>
+
+      <!-- Add your content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li>
+          <a href="https://www.baccn.org" target="_blank">
+            British Association of Critical Care Nurses (BACCN)
+          </a>
+        </li>
+        <li>
+          Brain Trauma Foundation (2007) Guidelines for the management of traumatic brain injury. Journal of Neuro Trauma. 24 (1) pp S- 59 S - 64. p 17-23. p 47-74
+        </li>
+        <li>
+          Borthwick, M, Bourne, R, Craig, M, Egan, A and Oxley, J (2006) Detection, prevention and treatment of delirium in critically ill patient. United kingdom Clinical Pharmacy association.
+        </li>
+        <li>
+          <a href="https://www.cc3n.org.uk" target="_blank">
+            Critical Care National Network Nurse Leads Forum (CC3N)
+          </a>
+        </li>
+        <li>
+          Department of Health (1996) Guidelines on admission to and discharge from intensive care and high dependency units. DoH, London
+        </li>
+        <li>
+          Department of Health (2009) Reference guide to consent for examination or treatment (2nd edition) London: DH
+        </li>
+        <li>
+          Department of Health (2008).Clean, safe care: Reducing infections and saving lives. Gateway ref: 9278
+        </li>
+      </ul>
+
+      <!-- End of content -->
+
+      {{ pagination({
+        "previousUrl": "/cms/assessment",
+        "previousPage": "How you'll be assessed",
+        "nextUrl": "/cms/acknowledgements",
+        "nextPage": "Acknowledgements"
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}

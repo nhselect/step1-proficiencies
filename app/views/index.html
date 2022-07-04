@@ -1,0 +1,106 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/level-one">Current activities</a></li>
+    </ol>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="/level-one/level-two/level-three">Back to current activities</a></p>
+  </div>
+</nav>
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+      <div class="nhsuk-u-reading-width">
+        <!-- Change the page title here -->
+        <h1>
+          Step 1 Proficiencies - National Proficiency Framework for Registered Nurses in Adult Critical Care
+        </h1>
+      </div>
+    </div>
+  </div>
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <div class="nhsuk-u-reading-width">
+      <!-- Add your content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+
+      <p>
+        The Step 1 proficiencies have been designed to provide you with the core generic skills required to safely and professionally care for the critically ill patient in a general critical care unit under the supervision and support of your Mentor, Lead Assessor and/or Practice Educator.
+      </p>
+
+      <h2>New to Step 1?</h2>
+
+      <p>
+        If you are new to the Step 1 proficiencies, you should begin by reading through the introduction and important information.
+      </p>
+
+      <div class="nhsuk-action-link">
+        <a class="nhsuk-action-link__link" href="/cms/index">
+          <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+            <path d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+          </svg>
+          <span class="nhsuk-action-link__text">Introduction and further information</span>
+        </a>
+      </div>
+
+      <h2>
+        Access the framework
+      </h2>
+
+      <button class="nhsuk-button nhsuk-button--secondary" type="submit">
+        View proficiencies
+      </button>
+
+
+      <!-- End of content -->
+      </div>
+    </div>
+
+    <div class="nhsuk-grid-column-one-third">
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <h3 class="nhsuk-card__heading">
+            Activity Supervisors
+          </h3>
+          <ul>
+            <li>Rani Mehmi, Educator/Manager</li>
+          </ul>
+          <button class="nhsuk-button nhsuk-button--secondary" type="submit">
+            Manage supervisors
+          </button>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+{% endblock %}

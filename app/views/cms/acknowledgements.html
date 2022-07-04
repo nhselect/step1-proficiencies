@@ -1,0 +1,122 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/">Step 1 Proficiencies
+      </a></li>
+    </ol>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="/">Back to Step 1 Proficiencies
+    </a></p>
+  </div>
+</nav>
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-one-third">
+
+      {{ backLink({
+        "href": "/",
+        "text": "Proficiency framework"
+      }) }}
+      <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+      {{ contentsList({
+        items: [
+          {
+            href: "/cms",
+            text: "Introduction to Step 1"
+          },
+          {
+            href: "/cms/introduction",
+            text: "Overview of the proficiency framework"
+          },
+          {
+            href: "/cms/structure",
+            text: "How the proficiency framework fits together"
+          },
+          {
+            href: "/cms/assessment",
+            text: "How you'll be assessed"
+          }
+          ,
+          {
+            href: "/cms/resources",
+            text: "Learning resources"
+          }
+          ,
+          {
+            href: "/cms/acknowledgements",
+            text: "Acknowledgements",
+            current: "true"
+          }
+        ]
+      }) }}
+    </div>
+    <div class="nhsuk-grid-column-two-thirds nhsuk-u-reading-width">
+
+      <!-- Change the page title here -->
+      <h1>
+        <span class="nhsuk-caption-l nhsuk-caption--bottom">
+          Step 1 Proficiencies
+        </span>
+        Acknowledgements
+      </h1>
+
+      <!-- Add your content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+      <p>
+        This framework has been developed in partnership with a wide range of stakeholders from practice and academia within the critical care community across England, Wales and Northern Ireland. Thanks are extended to all contributors specifically the following:
+      </p>
+
+      <h2>Chair</h2>
+
+      <ul>
+        <li><b>Melanie Kynaston</b></li>
+      </ul>
+
+      <h2>Working Party (2015)</h2>
+
+      <ul>
+        <li>
+          <b>Andrea Baldwin</b>, Lancs & South Cumbria Critical Care Network and co-chair: National Network Directors
+        </li>
+      </ul>
+      
+
+      <!-- End of content -->
+
+      {{ pagination({
+        "previousUrl": "/cms/resources",
+        "previousPage": "Learning resources"
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}

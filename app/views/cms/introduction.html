@@ -1,0 +1,158 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/">Step 1 Proficiencies
+      </a></li>
+    </ol>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="/">Back to Step 1 Proficiencies
+    </a></p>
+  </div>
+</nav>
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-one-third">
+
+      {{ backLink({
+        "href": "/",
+        "text": "Proficiency framework"
+      }) }}
+      <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+      {{ contentsList({
+        items: [
+          {
+            href: "/cms",
+            text: "Introduction to Step 1"
+          },
+          {
+            href: "/cms/introduction",
+            text: "Overview of the proficiency framework",
+            current: "true"
+          },
+          {
+            href: "/cms/structure",
+            text: "How the proficiency framework fits together"
+          },
+          {
+            href: "/cms/assessment",
+            text: "How you'll be assessed"
+          }
+          ,
+          {
+            href: "/cms/resources",
+            text: "Learning resources"
+          }
+          ,
+          {
+            href: "/cms/acknowledgements",
+            text: "Acknowledgements"
+          }
+        ]
+      }) }}
+    </div>
+    <div class="nhsuk-grid-column-two-thirds nhsuk-u-reading-width">
+
+      <!-- Change the page title here -->
+      <h1>
+        <span class="nhsuk-caption-l nhsuk-caption--bottom">
+          Step 1 Proficiencies
+        </span>
+        Overview of the proficiency framework
+      </h1>
+
+      <!-- Add your content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+      
+      <h2>
+        Who these proficiencies are for
+      </h2>
+
+      <p class="nhsuk-body-l">
+        These proficiencies are designed for use by registered nurses embarking on a career working in a Level 3 critical care area.
+      </p>
+        
+      <p>
+        Critical care nurses play a pivotal role in the assessment, care and recovery of those patients who experience critical illness. Their experience, proficiency and knowledge allow them to work both on their own and in partnership with wider multidisciplinary healthcare teams.
+      </p>
+
+      <p>
+        Critical care nurses use a range of skills, including:
+      </p>
+
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li>Assessing the complex patient </li>
+        <li>Interventional application</li>
+        <li>Rehabilitation and recovery planning</li>
+        <li>Information and knowledge management</li>
+        <li>Leadership and risk management</li>
+        <li>Decision making</li>
+        <li>Communicating</li>
+        <li>Influencing and negotiating</li>
+        <li>Engagement and facilitation</li>
+      </ul>
+
+      <p>
+        Nurses are required to provide safe, high quality services for the public, and support improvements in the critical care environment so that the safety and quality of care is continually enhanced.
+      </p>
+      
+      <p>
+        The critical care environment is a constantly changing field with emerging technologies and therapies to aid patient recovery through the often life-threatening illness. Nurses need to ensure they develop and maintain proficiency in practice to meet the challenges presented.
+      </p>
+
+      <h2>
+        How you can develop proficiency in critical care
+      </h2>
+
+      <p>
+        You can use these proficiencies to inform your development. You might already be close to achieving all of these proficiencies, or might be a long way off and have a lot of development to undertake depending on your previous experience.
+      </p>
+      
+      <p>
+        The thought processes you need to go through and the actions you need to take will be similar, the difference will be in the amount of experience that is needed and the level of knowledge required in supporting further development along the steps of proficiency.
+      </p>
+      
+      <p>
+        These proficiencies describe what it is that an individual is expected and able to do when they are fully functioning as a competent safe practitioner.
+      </p>
+
+      <!-- End of content -->
+
+      {{ pagination({
+        "previousUrl": "/cms",
+        "previousPage": "Introduction to Step 1",
+        "nextUrl": "/cms/structure",
+        "nextPage": "How the proficiency framework fits together"
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}
