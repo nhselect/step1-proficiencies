@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout.html' %}
+{% extends 'layout-step2.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -12,22 +12,7 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-  
-{% endblock %}
-
-<!-- For adding a breadcrumb -->
-<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
-{% block beforeContent %}
-<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
-  <div class="nhsuk-width-container">
-    <ol class="nhsuk-breadcrumb__list">
-      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/">Step 1 Proficiencies
-      </a></li>
-    </ol>
-    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="/">Back to Step 1 Proficiencies
-    </a></p>
-  </div>
-</nav>
+Step 3 proficiencies: Acknowledgements
 {% endblock %}
 
 <!-- For adding a back link -->
@@ -41,50 +26,30 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-one-third">
 
-      {{ backLink({
-        "href": "/",
-        "text": "Proficiency framework"
-      }) }}
-      <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
-
-      {{ contentsList({
-        items: [
-          {
-            href: "/cms",
-            text: "Introduction to Step 1"
-          },
-          {
-            href: "/cms/introduction",
-            text: "Overview of the proficiency framework"
-          },
-          {
-            href: "/cms/structure",
-            text: "How the proficiency framework fits together"
-          },
-          {
-            href: "/cms/assessment",
-            text: "How you'll be assessed"
-          }
-          ,
-          {
-            href: "/cms/resources",
-            text: "Learning resources"
-          }
-          ,
-          {
-            href: "/cms/acknowledgements",
-            text: "Acknowledgements",
-            current: "true"
-          }
-        ]
-      }) }}
+      <nav class="nhsuk-contents-list" role="navigation" aria-label="Pages in this guide">
+        <h2 class="nhsuk-u-visually-hidden">Contents</h2>
+        <ol class="nhsuk-contents-list__list">
+          <li class="nhsuk-contents-list__item">
+            <a class="nhsuk-contents-list__link" href="index">Introduction to Step 3</a>
+          </li>
+          <li class="nhsuk-contents-list__item">
+            <a class="nhsuk-contents-list__link" href="resources">Learning resources</a>
+          </li>
+          <li class="nhsuk-contents-list__item">
+            <a class="nhsuk-contents-list__link" href="disclaimer">Disclaimer</a>
+          </li>
+          <li class="nhsuk-contents-list__item" aria-current="page">
+            <span class="nhsuk-contents-list__current">Acknowledgements</span>
+          </li>
+        </ol>
+      </nav>
     </div>
     <div class="nhsuk-grid-column-two-thirds nhsuk-u-reading-width">
 
       <!-- Change the page title here -->
       <h1>
         <span class="nhsuk-caption-l nhsuk-caption--bottom">
-          Step 1 Proficiencies
+          Step 3 proficiencies
         </span>
         Acknowledgements
       </h1>
@@ -139,26 +104,15 @@
       Thanks is also extended to the original 2012 working party.
     </p>
 
-    <hr />
+    <hr /> 
 
-    <p class="nhsuk-body-s nhsuk-u-secondary-text-color">
-      <strong>&copy; Critical Care Networks - National Nurse Leads (CC3N) 2015</strong>
-    </p>
-    <p class="nhsuk-body-s nhsuk-u-secondary-text-color">
-      All rights reserved. No reproduction, copy or transmission of this publication may be made without written permission. No paragraph of this publication may be reproduced, copied or transmitted save with written permission or in accordance with the provisions of the Copyright, Designs and patents Act 1988.
-    </p>
-    <p class="nhsuk-body-s nhsuk-u-secondary-text-color">
-      Neither the Critical Care Networks-National Nurse Leads (CC3N) nor the authors accept any responsibility for any loss or damage arising from actions or decisions based on the information contained in this publication. Ultimate responsibility for the treatment of patients and interpretation of the published materials lies with the Registered Nurse.
-    </p>
-    <p class="nhsuk-body-s nhsuk-u-secondary-text-color">
-      This document has been produced with support from these organisations and is available through the CC3N website: www.cc3n.org.uk. It has received interest internationally and may be available in the future in alternative languages, it has also be used to inform registered nurse competency development in specialities outside of critical care.
-    </p>
+    <img src="/images/logos.png" alt="Organisational logos" style="mix-blend-mode: multiply; max-width: 100%; margin-bottom: 24px;" />
 
       <!-- End of content -->
 
       {{ pagination({
-        "previousUrl": "/cms/resources",
-        "previousPage": "Learning resources"
+        "previousUrl": "disclaimer",
+        "previousPage": "Disclaimer"
       }) }}
 
     </div>

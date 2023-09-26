@@ -7,6 +7,7 @@ const browserSync = require('browser-sync');
 const clean = require('gulp-clean');
 var sass = require('gulp-sass')(require('sass'));
 const nodemon = require('gulp-nodemon');
+const nunjucksRender = require('gulp-nunjucks-render');
 
 // Local dependencies
 const config = require('./app/config');
@@ -50,11 +51,25 @@ function compileScripts() {
 function compileAssets() {
   return gulp.src([
     'app/assets/**/**/*.*',
-    'docs/assets/**/**/*.*',
+    // 'docs/assets/**/**/*.*',
     '!**/assets/**/**/*.js', // Don't copy JS files
     '!**/assets/**/**/*.scss', // Don't copy SCSS files
   ])
   .pipe(gulp.dest('public'));
+}
+
+function compileHtml() {
+  return gulp.src([
+    'app/views/**/**/*.html'
+  ])
+  .pipe(nunjucksRender({
+    path: [
+      'app/views',
+      'docs/views',
+      'node_modules/nhsuk-frontend/packages/components'
+    ]
+  }))
+  .pipe(gulp.dest('public'))
 }
 
 // Start nodemon
@@ -119,5 +134,5 @@ exports.compileStyles = compileStyles;
 exports.compileScripts = compileScripts;
 exports.cleanPublic = cleanPublic;
 
-gulp.task('build', gulp.series(cleanPublic, compileStyles, compileScripts, compileAssets));
+gulp.task('build', gulp.series(cleanPublic, compileStyles, compileScripts, compileAssets, compileHtml));
 gulp.task('default', gulp.series(startNodemon, startBrowserSync, watch));

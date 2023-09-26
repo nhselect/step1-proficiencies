@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout.html' %}
+{% extends 'layout-step1.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -12,22 +12,7 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-  
-{% endblock %}
-
-<!-- For adding a breadcrumb -->
-<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
-{% block beforeContent %}
-<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
-  <div class="nhsuk-width-container">
-    <ol class="nhsuk-breadcrumb__list">
-      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/">Step 1 Proficiencies
-      </a></li>
-    </ol>
-    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="/">Back to Step 1 Proficiencies
-    </a></p>
-  </div>
-</nav>
+  Step 1 proficiencies: Overview of the framework
 {% endblock %}
 
 <!-- For adding a back link -->
@@ -41,50 +26,40 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-one-third">
 
-      {{ backLink({
-        "href": "/",
-        "text": "Proficiency framework"
-      }) }}
-      <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+      <nav class="nhsuk-contents-list" role="navigation" aria-label="Pages in this guide">
+        <h2 class="nhsuk-u-visually-hidden">Contents</h2>
+        <ol class="nhsuk-contents-list__list">
+          <li class="nhsuk-contents-list__item">
+            <a class="nhsuk-contents-list__link" href="index">Introduction to Step 1</a>
+          </li>
+          <li class="nhsuk-contents-list__item" aria-current="page">
+            <span class="nhsuk-contents-list__current">Overview of the proficiency framework</span>
+          </li>
+          <li class="nhsuk-contents-list__item">
+            <a class="nhsuk-contents-list__link" href="structure">How the proficiency framework fits together</a>
+          </li>
+          <li class="nhsuk-contents-list__item">
+            <a class="nhsuk-contents-list__link" href="assessment">How you'll be assessed</a>
+          </li>
+          <li class="nhsuk-contents-list__item">
+            <a class="nhsuk-contents-list__link" href="resources">Learning resources</a>
+          </li>
+          <li class="nhsuk-contents-list__item">
+            <a class="nhsuk-contents-list__link" href="disclaimer">Disclaimer</a>
+          </li>
+          <li class="nhsuk-contents-list__item">
+            <a class="nhsuk-contents-list__link" href="acknowledgements">Acknowledgements</a>
+          </li>
+        </ol>
+      </nav>
 
-      {{ contentsList({
-        items: [
-          {
-            href: "/cms",
-            text: "Introduction to Step 1"
-          },
-          {
-            href: "/cms/introduction",
-            text: "Overview of the proficiency framework",
-            current: "true"
-          },
-          {
-            href: "/cms/structure",
-            text: "How the proficiency framework fits together"
-          },
-          {
-            href: "/cms/assessment",
-            text: "How you'll be assessed"
-          }
-          ,
-          {
-            href: "/cms/resources",
-            text: "Learning resources"
-          }
-          ,
-          {
-            href: "/cms/acknowledgements",
-            text: "Acknowledgements"
-          }
-        ]
-      }) }}
     </div>
     <div class="nhsuk-grid-column-two-thirds nhsuk-u-reading-width">
 
       <!-- Change the page title here -->
       <h1>
         <span class="nhsuk-caption-l nhsuk-caption--bottom">
-          Step 1 Proficiencies
+          Step 1 proficiencies
         </span>
         Overview of the proficiency framework
       </h1>
@@ -147,9 +122,9 @@
       <!-- End of content -->
 
       {{ pagination({
-        "previousUrl": "/cms",
+        "previousUrl": "index",
         "previousPage": "Introduction to Step 1",
-        "nextUrl": "/cms/structure",
+        "nextUrl": "structure",
         "nextPage": "How the proficiency framework fits together"
       }) }}
 

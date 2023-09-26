@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout.html' %}
+{% extends 'layout-step1.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -12,22 +12,7 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-  
-{% endblock %}
-
-<!-- For adding a breadcrumb -->
-<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
-{% block beforeContent %}
-<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
-  <div class="nhsuk-width-container">
-    <ol class="nhsuk-breadcrumb__list">
-      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/">Step 1 Proficiencies
-      </a></li>
-    </ol>
-    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="/">Back to Step 1 Proficiencies
-    </a></p>
-  </div>
-</nav>
+Step 1 proficiencies: How you'll be assessed
 {% endblock %}
 
 <!-- For adding a back link -->
@@ -41,48 +26,40 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-one-third">
 
-      {{ backLink({
-        "href": "/",
-        "text": "Proficiency framework"
-      }) }}
-      <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
 
-      {{ contentsList({
-        items: [
-          {
-            href: "/cms",
-            text: "Introduction to Step 1"
-          },
-          {
-            href: "/cms/introduction",
-            text: "Overview of the proficiency framework"
-          },
-          {
-            href: "/cms/structure",
-            text: "How the proficiency framework fits together"
-          },
-          {
-            href: "/cms/assessment",
-            text: "How you'll be assessed",
-            current: "true"
-          },
-          {
-            href: "/cms/resources",
-            text: "Learning resources"
-          },
-          {
-            href: "/cms/acknowledgements",
-            text: "Acknowledgements"
-          }
-        ]
-      }) }}
+      <nav class="nhsuk-contents-list" role="navigation" aria-label="Pages in this guide">
+        <h2 class="nhsuk-u-visually-hidden">Contents</h2>
+        <ol class="nhsuk-contents-list__list">
+          <li class="nhsuk-contents-list__item">
+            <a class="nhsuk-contents-list__link" href="index">Introduction to Step 1</a>
+          </li>
+          <li class="nhsuk-contents-list__item">
+            <a class="nhsuk-contents-list__link" href="overview">Overview of the proficiency framework</a>
+          </li>
+          <li class="nhsuk-contents-list__item">
+            <a class="nhsuk-contents-list__link" href="structure">How the proficiency framework fits together</a>
+          </li>
+          <li class="nhsuk-contents-list__item" aria-current="page">
+            <span class="nhsuk-contents-list__current">How you'll be assessed</span>
+          </li>
+          <li class="nhsuk-contents-list__item">
+            <a class="nhsuk-contents-list__link" href="resources">Learning resources</a>
+          </li>
+          <li class="nhsuk-contents-list__item">
+            <a class="nhsuk-contents-list__link" href="disclaimer">Disclaimer</a>
+          </li>
+          <li class="nhsuk-contents-list__item">
+            <a class="nhsuk-contents-list__link" href="acknowledgements">Acknowledgements</a>
+          </li>
+        </ol>
+      </nav>
     </div>
     <div class="nhsuk-grid-column-two-thirds nhsuk-u-reading-width">
 
       <!-- Change the page title here -->
       <h1>
         <span class="nhsuk-caption-l nhsuk-caption--bottom">
-          Step 1 Proficiencies
+          Step 1 proficiencies
         </span>
         How you'll be assessed
       </h1>
@@ -95,7 +72,7 @@
       </p>
         
       <p>
-        You will be allocated a Lead Assessor who will oversee your ongoing development, colleagues and mentors will assist you in achieving proficiency in practice.
+        You will be allocated a Lead Assessor who will oversee your ongoing development. Colleagues and mentors will assist you in achieving proficiency in practice.
       </p>
         
       <p>
@@ -111,7 +88,7 @@
       </p>
 
       <p>
-        Proficiency must be demonstrated through observation of your practice against the proficiency statements outlined. Your mentor or Lead assessor may however use a combination of the following techniques to support their decision:
+        proficiency must be demonstrated through observation of your practice against the proficiency statements outlined. Your mentor or Lead assessor may however use a combination of the following techniques to support their decision:
       </p>
 
       <ul class="nhsuk-list nhsuk-list--bullet">
@@ -128,7 +105,7 @@
       </h2>
 
       <p>
-        It is your responsibility to work in collaboration with your Lead Assessor and/or Practice Educator to discuss and agree your developmental needs in order to achieve proficiency in critical care practice. By following these simple rules it is hoped you will have a positive experience whilst developing yourself through the 'Steps of Proficiency':
+        It is your responsibility to work in collaboration with your Lead Assessor and/or Practice Educator to discuss and agree your developmental needs in order to achieve proficiency in critical care practice. By following these simple rules it is hoped you will have a positive experience whilst developing yourself through the 'Steps of proficiency':
       </p>
 
       <ul class="nhsuk-list nhsuk-list--bullet">
@@ -141,9 +118,9 @@
       <!-- End of content -->
 
       {{ pagination({
-        "previousUrl": "/cms/structure",
+        "previousUrl": "structure",
         "previousPage": "How the proficiency framework fits together",
-        "nextUrl": "/cms/resources",
+        "nextUrl": "resources",
         "nextPage": "Learning resources"
       }) }}
 

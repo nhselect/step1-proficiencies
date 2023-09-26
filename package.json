@@ -10,7 +10,8 @@
     "test": "",
     "prewatch": "gulp build",
     "watch": "gulp",
-    "lint:js": "eslint -c ./linters/.eslintrc.js app.js middleware/**/*.js lib/**/*.js app/*.js docs/*.js"
+    "lint:js": "eslint -c ./linters/.eslintrc.js app.js middleware/**/*.js lib/**/*.js app/*.js docs/*.js",
+    "build:html": "nunjucks-to-html app/views/**/*.{njk,html}"
   },
   "author": "https://github.com/nhsuk/",
   "license": "MIT",
@@ -29,11 +30,13 @@
     "gulp-clean": "^0.4.0",
     "gulp-clean-css": "^4.3.0",
     "gulp-nodemon": "^2.5.0",
+    "gulp-nunjucks-render": "^2.2.3",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^5.0.0",
     "keypather": "^3.0.0",
     "nhsuk-frontend": "^6.1.0",
     "nunjucks": "^3.2.3",
+    "nunjucks-to-html": "^1.1.0",
     "path": "^0.12.7",
     "sass": "^1.44.0"
   },

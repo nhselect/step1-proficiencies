@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout.html' %}
+{% extends 'layout-step1.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -12,22 +12,7 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-  
-{% endblock %}
-
-<!-- For adding a breadcrumb -->
-<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
-{% block beforeContent %}
-<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
-  <div class="nhsuk-width-container">
-    <ol class="nhsuk-breadcrumb__list">
-      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/">Step 1 Proficiencies
-      </a></li>
-    </ol>
-    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="/">Back to Step 1 Proficiencies
-    </a></p>
-  </div>
-</nav>
+Step 1 proficiencies: How the framework fits together
 {% endblock %}
 
 <!-- For adding a back link -->
@@ -41,50 +26,40 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-one-third">
 
-      {{ backLink({
-        "href": "/",
-        "text": "Proficiency framework"
-      }) }}
-      <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+      <nav class="nhsuk-contents-list" role="navigation" aria-label="Pages in this guide">
+        <h2 class="nhsuk-u-visually-hidden">Contents</h2>
+        <ol class="nhsuk-contents-list__list">
+          <li class="nhsuk-contents-list__item">
+            <a class="nhsuk-contents-list__link" href="index">Introduction to Step 1</a>
+          </li>
+          <li class="nhsuk-contents-list__item">
+            <a class="nhsuk-contents-list__link" href="overview">Overview of the proficiency framework</a>
+          </li>
+          <li class="nhsuk-contents-list__item" aria-current="page">
+            <span class="nhsuk-contents-list__current">How the proficiency framework fits together</span>
+          </li>
+          <li class="nhsuk-contents-list__item">
+            <a class="nhsuk-contents-list__link" href="assessment">How you'll be assessed</a>
+          </li>
+          <li class="nhsuk-contents-list__item">
+            <a class="nhsuk-contents-list__link" href="resources">Learning resources</a>
+          </li>
+          <li class="nhsuk-contents-list__item">
+            <a class="nhsuk-contents-list__link" href="disclaimer">Disclaimer</a>
+          </li>
+          <li class="nhsuk-contents-list__item">
+            <a class="nhsuk-contents-list__link" href="acknowledgements">Acknowledgements</a>
+          </li>
+        </ol>
+      </nav>
 
-      {{ contentsList({
-        items: [
-          {
-            href: "/cms",
-            text: "Introduction to Step 1"
-          },
-          {
-            href: "/cms/introduction",
-            text: "Overview of the proficiency framework"
-          },
-          {
-            href: "/cms/structure",
-            text: "How the proficiency framework fits together",
-            current: "true"
-          },
-          {
-            href: "/cms/assessment",
-            text: "How you'll be assessed"
-          }
-          ,
-          {
-            href: "/cms/resources",
-            text: "Learning resources"
-          }
-          ,
-          {
-            href: "/cms/acknowledgements",
-            text: "Acknowledgements"
-          }
-        ]
-      }) }}
     </div>
     <div class="nhsuk-grid-column-two-thirds nhsuk-u-reading-width">
 
       <!-- Change the page title here -->
       <h1>
         <span class="nhsuk-caption-l nhsuk-caption--bottom">
-          Step 1 Proficiencies
+          Step 1 proficiencies
         </span>
         How the proficiency framework fits together
       </h1>
@@ -141,14 +116,38 @@
         <li>Apply knowledge, understanding and research to relevant policies, procedures and guidelines to critically analyse and improve practice</li>
       </ul>
       
-      <!-- End of content -->
-
-      {{ pagination({
-        "previousUrl": "/cms/introduction",
-        "previousPage": "Overview of the proficiency framework",
-        "nextUrl": "/cms/assessment",
-        "nextPage": "How you'll be assessed"
-      }) }}
+      <nav class="nhsuk-pagination" role="navigation" aria-label="Pagination">
+        <ul class="nhsuk-list nhsuk-pagination__list">
+          <li class="nhsuk-pagination-item--previous">
+            <a class="nhsuk-pagination__link nhsuk-pagination__link--prev"
+              href="overview"
+              >
+              <span class="nhsuk-pagination__title">Previous</span>
+              <span class="nhsuk-u-visually-hidden">:</span>
+              <span class="nhsuk-pagination__page">
+                Overview of the proficiency framework
+              </span>
+              <svg class="nhsuk-icon nhsuk-icon__arrow-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="34" height="34">
+                <path d="M4.1 12.3l2.7 3c.2.2.5.2.7 0 .1-.1.1-.2.1-.3v-2h11c.6 0 1-.4 1-1s-.4-1-1-1h-11V9c0-.2-.1-.4-.3-.5h-.2c-.1 0-.3.1-.4.2l-2.7 3c0 .2 0 .4.1.6z"></path>
+              </svg>
+            </a>
+          </li>
+          <li class="nhsuk-pagination-item--next">
+            <a class="nhsuk-pagination__link nhsuk-pagination__link--next" 
+              href="assessment"
+              >
+              <span class="nhsuk-pagination__title">Next</span>
+              <span class="nhsuk-u-visually-hidden">:</span>
+              <span class="nhsuk-pagination__page">
+                How you'll be assessed
+              </span>
+              <svg class="nhsuk-icon nhsuk-icon__arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="34" height="34">
+                <path d="M19.6 11.66l-2.73-3A.51.51 0 0 0 16 9v2H5a1 1 0 0 0 0 2h11v2a.5.5 0 0 0 .32.46.39.39 0 0 0 .18 0 .52.52 0 0 0 .37-.16l2.73-3a.5.5 0 0 0 0-.64z"></path>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </nav>
 
     </div>
   </div>

@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout.html' %}
+{% extends 'layout-step1.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -12,22 +12,7 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-  
-{% endblock %}
-
-<!-- For adding a breadcrumb -->
-<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
-{% block beforeContent %}
-<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
-  <div class="nhsuk-width-container">
-    <ol class="nhsuk-breadcrumb__list">
-      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/">Step 1 Proficiencies
-      </a></li>
-    </ol>
-    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="/">Back to Step 1 Proficiencies
-    </a></p>
-  </div>
-</nav>
+  Step 1 proficiencies: Introduction
 {% endblock %}
 
 <!-- For adding a back link -->
@@ -41,42 +26,32 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-one-third">
 
-      {{ backLink({
-        "href": "/",
-        "text": "Proficiency framework"
-      }) }}
-
-      <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
-
-      {{ contentsList({
-        items: [
-          {
-            href: "/cms",
-            text: "Introduction to Step 1",
-            current: "true"
-          },
-          {
-            href: "/cms/introduction",
-            text: "Overview of the proficiency framework"
-          },
-          {
-            href: "/cms/structure",
-            text: "How the proficiency framework fits together"
-          },
-          {
-            href: "/cms/assessment",
-            text: "How you'll be assessed"
-          },
-          {
-            href: "/cms/resources",
-            text: "Learning resources"
-          },
-          {
-            href: "/cms/acknowledgements",
-            text: "Acknowledgements"
-          }
-        ]
-      }) }}
+      <nav class="nhsuk-contents-list" role="navigation" aria-label="Pages in this guide">
+        <h2 class="nhsuk-u-visually-hidden">Contents</h2>
+        <ol class="nhsuk-contents-list__list">
+          <li class="nhsuk-contents-list__item" aria-current="page">
+            <span class="nhsuk-contents-list__current">Introduction to Step 1</span>
+          </li>
+          <li class="nhsuk-contents-list__item">
+            <a class="nhsuk-contents-list__link" href="overview">Overview of the proficiency framework</a>
+          </li>
+          <li class="nhsuk-contents-list__item">
+            <a class="nhsuk-contents-list__link" href="structure">How the proficiency framework fits together</a>
+          </li>
+          <li class="nhsuk-contents-list__item">
+            <a class="nhsuk-contents-list__link" href="assessment">How you'll be assessed</a>
+          </li>
+          <li class="nhsuk-contents-list__item">
+            <a class="nhsuk-contents-list__link" href="resources">Learning resources</a>
+          </li>
+          <li class="nhsuk-contents-list__item">
+            <a class="nhsuk-contents-list__link" href="disclaimer">Disclaimer</a>
+          </li>
+          <li class="nhsuk-contents-list__item">
+            <a class="nhsuk-contents-list__link" href="acknowledgements">Acknowledgements</a>
+          </li>
+        </ol>
+      </nav>
 
     </div>
     <div class="nhsuk-grid-column-two-thirds nhsuk-u-reading-width">
@@ -84,7 +59,7 @@
       <!-- Change the page title here -->
       <h1>
         <span class="nhsuk-caption-l nhsuk-caption--bottom">
-          Step 1 Proficiencies
+          Step 1 proficiencies
         </span>
         Introduction
       </h1>
@@ -95,11 +70,11 @@
       
 
       <p>
-        All step 1 Proficiencies have been designed to provide you with the core generic skills required to safely and professionally care for the critically ill patient in a general critical care unit under the supervision and support of your Mentor, Lead Assessor and/or Practice Educator.
+        All Step 1 proficiencies have been designed to provide you with the core generic skills required to safely and professionally care for the critically ill patient in a general critical care unit under the supervision and support of your Mentor, Lead Assessor and/or Practice Educator.
       </p>
 
       <p>
-        Step 1 Proficiencies will form the first part of your development in critical care, and may be included as part of a local Preceptorship programme if you are newly qualified.
+        Step 1 proficiencies will form the first part of your development in critical care, and may be included as part of a local Preceptorship programme if you are newly qualified.
       </p>
 
       <h2>
@@ -107,15 +82,15 @@
       </h2>
 
       <p>
-        You'll need to be able to demonstrate a fundamental underpinning knowledge in relation to all the proficiency statements outlined and you should keep a record of any supportive evidence and reflective practice to assist you during progress and assessment reviews and to inform your NMC Revalidation.
+        You'll need to be able to demonstrate a fundamental underpinning knowledge in relation to all the proficiency statements outlined. You should keep a record of any supportive evidence and reflective practice to assist you during progress and assessment reviews, and to inform your NMC Revalidation.
       </p>
 
       <h2>
-        When to complete the Proficiencies
+        When to complete the proficiencies
       </h2>
 
       <p>
-        You should aim to complete Step 1 Proficiencies within 12 months of appointment or returning to critical care. However, this timeframe will be agreed locally by your line manager and will be dependent on your previous knowledge and experience, your hours and pattern of work, and local service needs.
+        You should aim to complete Step 1 proficiencies within 12 months of appointment or returning to critical care. However, this timeframe will be agreed locally by your line manager and will be dependent on your previous knowledge and experience, your hours and pattern of work, and local service needs.
       </p>
 
       <h2>
@@ -128,10 +103,10 @@
 
       <figure class="nhsuk-image">
         <div style="padding: 24px;">
-          <img class="nhsuk-image__img" src="/images/supernumerary.png" alt="Proficiencies identified for completion in your supernumerary period are highlighted with a tag.">
+          <img class="nhsuk-image__img" src="/images/supernumerary.png" alt="proficiencies identified for completion in your supernumerary period are highlighted with a tag.">
         </div>
         <figcaption class="nhsuk-image__caption">
-          Proficiencies identified for completion in your supernumerary period are highlighted with a tag.
+          proficiencies identified for completion in your supernumerary period are highlighted with a tag.
         </figcaption>
       </figure>
 
@@ -170,7 +145,7 @@
       <!-- End of content -->
 
       {{ pagination({
-        "nextUrl": "/cms/introduction",
+        "nextUrl": "overview",
         "nextPage": "Overview of the proficiency framework"
       }) }}
 

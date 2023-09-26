@@ -31,30 +31,21 @@
   }}
 {% endblock %}
 
-<!-- Edit the footer -->
-<!-- Footer code examples can be found at https://service-manual.nhs.uk/design-system/components/footer -->
-{% block footer %}
-  {{ footer({
-    "links": [
-      {
-        "URL": "https://www.dls.nhs.uk/dev-my-learning-portal/LearningSolutions/Contact",
-        "label": "Contact us"
-      },
-      {
-        "URL": "https://www.dls.nhs.uk/dev-my-learning-portal/LearningSolutions/Terms",
-        "label": "Terms of use"
-      },
-      {
-        "URL": "https://www.dls.nhs.uk/dev-my-learning-portal/LearningSolutions/AccessibilityHelp",
-        "label": "Accessibility"
-      },
-      {
-        "URL": "https://www.hee.nhs.uk/about/privacy-notice",
-        "label": "Privacy"
-      }
-    ]
-  })}}
-{% endblock %}
+<footer role="contentinfo">
+  <div class="nhsuk-footer" id="nhsuk-footer">
+    <div class="nhsuk-width-container">
+      <h2 class="nhsuk-u-visually-hidden">Support links</h2>
+      <ul class="nhsuk-footer__list">
+        <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="https://www.dls.nhs.uk/dev-my-learning-portal/LearningSolutions/AccessibilityHelp">Accessibility statement</a></li>
+        <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="https://www.dls.nhs.uk/dev-my-learning-portal/LearningSolutions/Contact">Contact us</a></li>
+        <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="https://www.hee.nhs.uk/about/privacy-notice">Privacy policy</a></li>
+        <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="https://www.dls.nhs.uk/dev-my-learning-portal/LearningSolutions/Terms">Terms and conditions</a></li>
+      </ul>
+
+      <p class="nhsuk-footer__copyright">&copy; Digital Learning Solutions, NHS England 2023</p>
+    </div>
+  </div>
+</footer>
 
 {% block bodyEnd %}
   {% block scripts %}

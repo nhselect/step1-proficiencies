@@ -1,0 +1,125 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-step2.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Step 3 proficiencies: Introduction
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-one-third">
+
+      <nav class="nhsuk-contents-list" role="navigation" aria-label="Pages in this guide">
+        <h2 class="nhsuk-u-visually-hidden">Contents</h2>
+        <ol class="nhsuk-contents-list__list">
+          <li class="nhsuk-contents-list__item" aria-current="page">
+            <span class="nhsuk-contents-list__current">Introduction to Step 3</span>
+          </li>
+          <li class="nhsuk-contents-list__item">
+            <a class="nhsuk-contents-list__link" href="resources">Learning resources</a>
+          </li>
+          <li class="nhsuk-contents-list__item">
+            <a class="nhsuk-contents-list__link" href="disclaimer">Disclaimer</a>
+          </li>
+          <li class="nhsuk-contents-list__item">
+            <a class="nhsuk-contents-list__link" href="acknowledgements">Acknowledgements</a>
+          </li>
+        </ol>
+      </nav>
+
+    </div>
+    <div class="nhsuk-grid-column-two-thirds nhsuk-u-reading-width">
+
+      <!-- Change the page title here -->
+      <h1>
+        <span class="nhsuk-caption-l nhsuk-caption--bottom">
+          Step 3 proficiencies
+        </span>
+        Introduction
+      </h1>
+
+      <!-- Add your content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+
+      
+
+      <p>
+        All step 3 Proficiencies have been designed to provide you with further core critical care skills building on those already attained in Step 1 and 2.
+      </p>
+
+      <p>
+        As you progress through this section of your development you will be expected to demonstrate your advanced theoretical knowledge and provide the relevant evidence base for your established practice.
+      </p>
+
+      <p>
+        You are advised to keep a record of any supportive evidence and reflective practice to assist you during progress and assessment reviews and to inform your NMC Revalidation.
+      </p>
+
+      <p>
+        It is anticipated that these proficiencies will form the next steps of your development and will be included as part of your post registration academic programme of education, which will be delivered by your local Higher Educational Institute (HEI).
+      </p>
+
+      <p>
+        During this section you will build on a range of skills including:
+      </p>
+
+      <ul>
+        <li>Assessing the complex patient</li>
+        <li>Interventional application</li>
+        <li>Decision making</li>
+        <li>Influencing and negotiating</li>
+        <li>Communicating</li>
+        <li>Engagement and facilitation</li>
+        <li>Information and knowledge management</li>
+        <li>Leadership and risk assessment</li>
+        <li>Rehabilitation and recovery planning</li>
+      </ul>
+
+      <p>On completing this section you will be able to:</p>
+
+      <ul>
+        <li>Demonstrate competent performance in all the activities specified without direct supervision based upon relevant evidenced based knowledge, intuition and established practice</li>
+        <li>Independently problem solve complex situations and offer solutions through critical analysis and evaluation</li>
+        <li>Supervise and instruct others in a range of activities related to their role and responsibilities</li>
+        <li>Apply knowledge, understanding and research to relevant policies, procedures and guidelines to critically analyse and improve practice</li>
+      </ul>
+
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <h2 class="nhsuk-card__heading">
+            How we define proficience:
+          </h2>
+          <p class="nhsuk-card__description">
+            The combination of skills, knowledge and attitudes, values, and technical abilities that underpin safe and effective critical care nursing care and interventions.
+          </p>
+        </div>
+      </div>
+
+
+      <!-- End of content -->
+
+      {{ pagination({
+        "nextUrl": "resources",
+        "nextPage": "Learning resources"
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}

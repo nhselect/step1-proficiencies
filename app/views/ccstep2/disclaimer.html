@@ -1,0 +1,81 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-step2.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Step 2 proficiencies: Disclaimer
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-one-third">
+
+      <nav class="nhsuk-contents-list" role="navigation" aria-label="Pages in this guide">
+        <h2 class="nhsuk-u-visually-hidden">Contents</h2>
+        <ol class="nhsuk-contents-list__list">
+          <li class="nhsuk-contents-list__item">
+            <a class="nhsuk-contents-list__link" href="index">Introduction to Step 2</a>
+          </li>
+          <li class="nhsuk-contents-list__item">
+            <a class="nhsuk-contents-list__link" href="resources">Learning resources</a>
+          </li>
+          <li class="nhsuk-contents-list__item" aria-current="page">
+            <span class="nhsuk-contents-list__current">Disclaimer</span>
+          </li>
+          <li class="nhsuk-contents-list__item">
+            <a class="nhsuk-contents-list__link" href="acknowledgements">Acknowledgements</a>
+          </li>
+        </ol>
+      </nav>
+    </div>
+    <div class="nhsuk-grid-column-two-thirds nhsuk-u-reading-width">
+
+      <!-- Change the page title here -->
+      <h1>
+        <span class="nhsuk-caption-l nhsuk-caption--bottom">
+          Step 2 proficiencies
+        </span>
+        Disclaimer and copyright
+      </h1>
+
+    <p class="nhsuk-body-s nhsuk-u-secondary-text-color">
+      <strong>&copy; Critical Care Networks - National Nurse Leads (CC3N) 2023</strong>
+    </p>
+    <p class="nhsuk-body-s nhsuk-u-secondary-text-color">
+      All rights reserved. No reproduction, copy or transmission of this publication may be made without written permission. No paragraph of this publication may be reproduced, copied or transmitted save with written permission or in accordance with the provisions of the Copyright, Designs and patents Act 1988.
+    </p>
+    <p class="nhsuk-body-s nhsuk-u-secondary-text-color">
+      Neither the Critical Care Networks-National Nurse Leads (CC3N) nor the authors accept any responsibility for any loss or damage arising from actions or decisions based on the information contained in this publication. Ultimate responsibility for the treatment of patients and interpretation of the published materials lies with the Registered Nurse.
+    </p>
+    <p class="nhsuk-body-s nhsuk-u-secondary-text-color">
+      This document has been produced with support from these organisations and is available through the <a href="https://www.cc3n.org.uk"></a>CC3N website</a>. It has received interest internationally and may be available in the future in alternative languages, it has also be used to inform registered nurse competency development in specialities outside of critical care.
+    </p>
+
+      <!-- End of content -->
+
+      {{ pagination({
+        "previousUrl": "resources",
+        "previousPage": "Learning resources",
+        "nextUrl": "acknowledgements",
+        "nextPage": "Acknowledgements"
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}
